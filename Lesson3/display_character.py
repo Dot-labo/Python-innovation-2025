@@ -8,48 +8,29 @@ show_profile = st.button("キャラクタープロフィールを表示")
 # ボタンが押されたらプロフィール表示
 if show_profile:
     st.markdown("---")
-    st.markdown("## 🧙‍♂️ あなたのキャラクタープロフィール")
+    st.header("🧙‍♂️ あなたのキャラクタープロフィール")
 
+    st.subheader("📋 基本情報")
     cols = st.columns(3)
-
-    cols[0].markdown("#### 🛡️ クラス")
-    cols[0].markdown(
-        f"<div style='background-color:#f0f2f6;padding:10px;border-radius:10px;text-align:center'>\
-        <b>{問題３で作った変数（クラス）}</b></div>",
-        unsafe_allow_html=True
-    )
-
-    cols[1].markdown("#### 🗺️ 出身地")
-    cols[1].markdown(
-        f"<div style='background-color:#f0f2f6;padding:10px;border-radius:10px;text-align:center'>\
-        <b>{問題４で作った変数（出身地）}</b></div>",
-        unsafe_allow_html=True
-    )
-
-    cols[2].markdown("#### 🎚️ レベル")
-    cols[2].markdown(
-        f"<div style='background-color:#f0f2f6;padding:10px;border-radius:10px;text-align:center'>\
-        <b>{問題１で作った変数（レベル）}</b></div>",
-        unsafe_allow_html=True
-    )
+    cols[0].metric(label="🛡️ クラス", value=問題3で作った変数)
+    cols[1].metric(label="🗺️ 出身地", value=問題4で釣った変数)
+    cols[2].metric(label="🎚️ レベル", value=問題1で作った変数)
 
     st.markdown("---")
 
-    st.markdown("### ✨ 特徴・能力")
-    if 問題２で作った変数（特殊能力）:
+    st.subheader("✨ 特徴・能力")
+    if 問題2で作った変数:
         st.success("✅ 特殊能力あり！")
     else:
         st.error("❌ 特殊能力なし")
 
     st.markdown("---")
 
-    st.markdown("### ⚔️ 得意な武器")
-    if 問題５で作った変数（武器）:
-        st.info("**装備できる武器：**")
-        weapons_html = "<div style='background-color:#e0f7fa;padding:10px;border-radius:10px'>"
-        weapons_html += "<br>".join([f"🔹 {weapon}" for weapon in selected_weapons])
-        weapons_html += "</div>"
-        st.markdown(weapons_html, unsafe_allow_html=True)
+    st.subheader("⚔️ 得意な武器")
+    if 問題5で作った変数:
+        st.info("選んだ武器：")
+        for weapon in selected_weapons:
+            st.write(f"・{weapon}")
     else:
         st.warning("武器は選ばれていません。")
 
