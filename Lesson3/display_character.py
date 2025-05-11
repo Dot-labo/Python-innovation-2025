@@ -13,7 +13,7 @@ if show_profile:
     st.subheader("📋 基本情報")
     cols = st.columns(3)
     cols[0].metric(label="🛡️ クラス", value=問題3で作った変数)
-    cols[1].metric(label="🗺️ 出身地", value=問題4で釣った変数)
+    cols[1].metric(label="🗺️ 出身地", value=問題4で作った変数)
     cols[2].metric(label="🎚️ レベル", value=問題1で作った変数)
 
     st.markdown("---")
